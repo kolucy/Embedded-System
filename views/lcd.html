@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        window.onload = function() {
+            var dataview = document.getElementById("dataview");
+            var socket = io.connect(); //소켓 생성
+            var html = '';
+
+            document.getElementById('print').onclick = function() {
+                var text = document.getElementById('msg').value;
+                socket.emit('printmsg', text);
+            };
+            document.getElementById('clear').onclick = function() {
+                socket.emit('clearmsg');
+            };
+        };
+    </script>
+</head>
+<body>
+    <h2>LCD 문자열 출력</h2>
+    <hr>
+    <input type="text" id="msg"/>
+    <input type="button" id="print" value="LCD출력"/>
+    <input type="button" id="clear" value="LCD클리어"/>
+</body>
+</html>
