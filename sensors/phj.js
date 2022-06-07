@@ -5,7 +5,8 @@ const led = new gpio(21, {mode: gpio.OUTPUT});
 const VRX = 0
 const VRY = 1
 const VRZ = 2
-const std = 1000;
+const main = require('../webPhJMain.js');
+const std = main.std;
 const PhJ = {
     joyX: 0,
     joyY: 0,
@@ -80,3 +81,4 @@ module.exports.read = function() { PhJ.read(); };
 module.exports.start = function(timerValue) { PhJ.start(timerValue); };
 module.exports.stop = function() { PhJ.stop(); }
 module.exports.terminate = function() {PhJ.terminate(); };
+module.exports.std = std;

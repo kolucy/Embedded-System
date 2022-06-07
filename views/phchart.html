@@ -21,14 +21,21 @@
                 }
             });
 
-            document.getElementById('std').value = function() {
-                var text = document.getElementById('std').value;
-                socket.emit('phstd', text);
-            };
+            //값 받아오기
             document.getElementById('start').onclick = function() {
-                var text = document.getElementById('text').value;
+                var text = document.getElementById('std').value;
                 socket.emit('startmsg', text);
             };
+
+            // document.getElementById('std').value = function() {
+            //     var text = document.getElementById('std').value;
+            //     socket.emit('phstd', text);
+            // };
+            // document.getElementById('start').onclick = function() {
+            //     var text = document.getElementById('text').value;
+            //     socket.emit('startmsg', text);
+            // };
+            
             document.getElementById('stop').onclick = function() {
                 var text = document.getElementById('text').value;
                 socket.emit('stopmsg', text);
