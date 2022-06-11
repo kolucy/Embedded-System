@@ -63,4 +63,4 @@ app.listen(PORT, () => {
 process.on('SIGINT', function() {
     console.log("\nAPI서버를 종료합니다");
     process.exit();
-})
+});

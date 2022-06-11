@@ -7,10 +7,6 @@ const network = require('network');
 const app = express();
 const PORT = 60001;
 
-
-
-//const app = express(serverbody);
-
 var mydata = {
     userip: '192.168.137.105',
     degree: '90'
@@ -73,4 +69,4 @@ app.listen(PORT, () => {
 process.on('SIGINT', function() {
     console.log("\nAPI서버를 종료합니다");
     process.exit();
-})
+});
